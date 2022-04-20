@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FrontController!{% endblock %}
+
+{% block body %}
+
+
+
+<div class="d-flex flex-wrap justify-content-evenly">
+
+    {% for continent in continents %}
+
+        <div class="card my-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{continent.nom}}</h5>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                {% for pays in continent.pays %}
+                    <li class="list-group-item">{{pays.nom ~ " - " ~ pays.capitale}}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="card-body d-flex justify-content-center">
+                <a href="{{path('pays_new')}}" class="card-link">Nouveau Pays</a>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

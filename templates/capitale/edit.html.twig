@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Capitale{% endblock %}
+
+{% block body %}
+    <h1>Edit Capitale</h1>
+
+    {{ include('capitale/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('capitale_index') }}">back to list</a>
+
+    {{ include('capitale/_delete_form.html.twig') }}
+{% endblock %}

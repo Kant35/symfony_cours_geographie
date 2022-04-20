@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.continent) }}
+
+        {# <div class="capitale-list" data-prototype="{{form_widget(form.capitale.vars.prototype)|e('html_attr') }}"> #}
+            {% for row in form.capitale %}
+
+                {{form_row(row)}}
+
+            {% endfor %}
+        {# </div> #}
+    
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
